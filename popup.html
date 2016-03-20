@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            font-family: 'Lato';
+            /*width: 348px; */
+            height: 100px;
+            overflow: hidden;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .form-actions {
+            margin-top: 10px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .input-group {
+            padding-top: 10px;
+        }
+        
+        .well {
+            padding: 2px;
+            background-color: #D48D42;
+        }
+        
+        #logout {
+            cursor: pointer;
+            min-height: 0px;
+            height: 30px;
+        }
+        
+        #header {
+            min-height: 0px;
+            height: 50px;
+        }
+        
+        #content1 {
+            min-height: 0px;
+            /*height: 300px;*/
+            float: left;
+        }
+        
+        #content2 {
+            min-height: 0px;
+            height: 250px;
+        }
+        
+        #logouttext {
+            cursor: pointer;
+            margin-top: 0.4em;
+            font-size: 1em;
+        }
+        
+        .tightDash {
+            margin-top: 0.5em;
+        }
+        
+        .tighterDash {
+            margin-top: 0.5em;
+            font-size: 46px;
+        }
+        
+        .lowerDash {
+            text-transform: none;
+            font-size: 46px;
+        }
+        
+        #navlist {
+            padding-left: 10px;
+        }
+        
+        #navlist li {
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 14px;
+            font-family: "Lato";
+            font-size: 16px;
+            color: #2C3803;
+            opacity: .7;
+            letter-spacing: .61px;
+            text-transform: capitalize;
+        }
+        
+        input {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            font-family: "Lato";
+            color: white;
+            opacity: .9;
+            font-size: 26px;
+            border-bottom: 4px solid white;
+            width: 162px;
+            margin-bottom: 40px;
+            letter-spacing: -1.31px;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .form-actions {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .input-group {
+            padding-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+        }
+        
+        .news {
+            display: block;
+            margin-right: 15px;
+        }
+        
+        .clear2 {
+            background: none;
+            font-family: "Lato";
+            /* letter-spacing: -1.31px; */
+            color: #22345B;
+            opacity: .6;
+            margin-top: -1px;
+            margin-right: 120px;
+            text-align: justify;
+        }
+        
+        .update {
+            font-size: 13px;
+            color: #EF0F04;
+            letter-spacing: 0.91px;
+            line-height: 13px;
+            text-transform: capitalize;
+            white-space: nowrap;
+            cursor: pointer;
+            border: 1px solid #EF0F04;
+            border-radius: 26px;
+            padding: 3px 10px;
+            transition: color, border-color 0.1s linear;
+        }
+        
+        .x {
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .x .close {
+            position: absolute;
+            top: 2px;
+            right: -2px;
+            z-index: 100;
+            cursor: pointer;
+            opacity: .2;
+        }
+        
+        .fa {
+            color: #22345B;
+            opacity: .75;
+        }
+        
+        .fa .red {
+            position: absolute;
+            font-family: "Lato";
+            font-weight: 700;
+            padding-right: 1px;
+            padding-top: 3px;
+            width: 25px;
+            height: 25px;
+            top: -7px;
+            right: -10px;
+            z-index: 100;
+            background: #EF2D33;
+            border: 1px solid rgba(0, 0, 0, 0.50);
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            letter-spacing: -1.15px;
+            opacity: 1;
+        }
+        
+        ._69e-header {
+            height: 70px;
+            padding-top: 20px;
+            padding-left: 20px;
+            color: #28b473;
+            line-height: 19px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 35px;
+            text-align: left;
+        }
+        
+        ._69e-header ._69e-logo {
+            display: inline-block;
+            top: -5px;
+            position: relative;
+            white-space: nowrap;
+            outline: none;
+        }
+        
+        ._69e-header ._69e-logo._69e-chrome {
+            width: 240px;
+            height: 70px;
+            background-size: 220px 50px;
+            background-image: url("logo2x.png");
+            background-repeat: no-repeat;
+        }
+        
+        .setting_item {
+            font-size: 15px;
+            color: #323439;
+            line-height: 24px;
+            font-weight: 300;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .line {
+            margin-top: 16px;
+            padding-left: 13px;
+            padding-right: 13px;
+        }
+        
+        .short_border {
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 65px);
+        }
+        
+        .footer {
+            font-size: 13px;
+            color: #323439;
+            line-height: 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            /* padding-top: 10px;
+            padding-left: 54px;
+            padding-bottom: 10px; */
+        }
+        
+        .btn {
+            display: inline;
+            margin-right: 16px;
+        }
+        
+        .contactMe:before {
+            width: 18px;
+            height: 17px;
+            background-size: 18px 17px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAAAXNSR0IArs4c6QAAAjZJREFUOBGFk89rE0EUx+fNztj8IEgoFS+CB0/VP0D/AaEHkR4MQvDgKSiKCh4KShq1oIInwbYLghCQ4LoaaL0J/hEiuXsV00Uidc3Ozvidbne72yR1YJL38zPv7bwhdsTqdDpicfHcPcZ4PBh8fQldzQqnvMPzvOPQy9gx9i/O+R3G6IoxtKs1+0ikNhuNxjifk8oZCJAykfCIqGSMnuecfTKGXRiN/t6uVsVp+O7Dvs2Y3pgG4ykxDENuISjmLhFTqOD8eByv1WpzrxlzHmptHhPxS2jzBg49lual/xnIGowxHG1cBtCC1qR02qjqHZLfc05tHPJoFqwAIjIV8C4qZVbQ2ir0/s7Oz80g+LGOA7ZxTmcWbA9kSy2VKi1AfqOSdgoZDoduq9WK7LYw1LyFNlenwSjpl99C6UtxzJ4chgCeLdd1Zb0+f9O2R6RXUOEzwHEp8TpXStVxzQth+Oe649ADrZWrtd6wVWSEfcHaBoNvr1D1FiAvoii8CteJIAhMIdb3+59R4ZmCcYpiYzzvw5e8S+SVw7Lv+2e1dmRij8aYn0Eagy7s0GarcGuZFUKv1zuFqcY0m6fYzzkX/cSWjzqQj6wIV/4d3+GaDZey9PYgbVL6D8gwIYSeTJu0TGvN6Xa7VYQ6mPAsA1NvlcyXOfaFQkUIruJxupVKLUoSzUIURUZKCaY5KcTcG7So4JPYhfdWAOF7LKOVGt7X3orjeLfZbAZWwZUv4eWXUx/mb5REJb//AJ0DEkIQjc4XAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            top: 3px;
+            margin-right: 3px;
+        }
+        
+        .footer_btn {
+            cursor: pointer;
+            position: relative;
+            margin-left: -22px;
+            color: #adadb0;
+            transition: color 0.1s;
+        }
+        
+        .footer_btn:hover {
+            color: #48484A;
+            text-decoration: none;
+        }
+        
+        .footer_btn:before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            margin-right: 6px;
+            height: 17px !important;
+            top: 4px;
+        }
+    </style>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- endinject -->
+</head>
+
+<body>
+    <div class="pure-u-1 dashboard-piece dashboard-piece-bluebg" id="content1">
+        <div class="_69e-header">
+            <a target="_blank" href="localhost/sweepit" class="_69e-logo _69e-chrome openGrammarly"></a>
+        </div>
+        <div class="dashboard-content">
+            <div id="" class="site_switcher line setting_item on">
+                <input type="text" class="form-control" id="keywords" placeholder="Add a Catagory" style="float:left;width: inherit;letter-spacing: .61px;">
+
+                <button type="button" id="clear" class="clear btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-erase glyphicon-align-left" aria-hidden="true"></span>
+                </button>
+
+                <div class="short_border"></div>
+            </div>
+
+            <div class="site_switcher line setting_item on" id="keyword_ListTop" style="display:none; min-height:50px">
+                <div class="short_border"></div>
+
+                <div class="pure-u-1 dashboard-piece dashboard-piece-greenbg" id="keyword_list">
+                </div>
+                <div class="short_border"></div>
+
+            </div>
+            <div class="site_switcher line setting_item on" id="notificationsTop" style="display:none">
+                <div class="news" id="notifications">
+                </div>
+                <div class="short_border"></div>
+
+            </div>
+            <div class="footer">
+                <a target="_blank" href="http://www.twitter.com/girayegebaw" class="contactMe footer_btn openGrammarly">
+                <span>&copy; Ermias Bayu - OU </span></a>
+
+            </div>
+        </div>
+
+
+
+</body>
+<!--<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75075600-1', 'auto');
+  ga('send', 'pageview');
+
+
+</script>-->
+<script src="popup.js"></script>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+<script src="home.js"></script>
+<script src="filterfeed.js"></script>
+
+</html>
