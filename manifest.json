@@ -1,45 +1,52 @@
 {
-"update_url": "https://www.google.com/",
-
-  "manifest_version": 2,
-
-  "name": "CloudClean-Facebook",
-  "description": "Content Filter - Facebook!",
-  "version": "0.0.10",
-
-  "icons": { 
-           "48": "icon48.png",
-          "128": "icon128.png" 
-  },
-
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-
-  "permissions": [
-    "https://www.facebook.com/",
-    "http://www.facebook.com/",
-    "tabs",
-    "storage", 
-    "notifications", 
-    "contextMenus"
-  ],
-
-  "background": {
-    "scripts": ["bootstrap.js"],
-    "persistent": false
-  },
-
-  "content_scripts": [
-    {
-      "matches": ["https://www.facebook.com/", "https://www.facebook.com/*"], 
-      "js": ["filterfeed.js", "jquery.js", "popup.js", "ga.js", "js15_as.js"], 
-      "run_at": "document_start"
+    "manifest_version": 2,
+    "name": "CloudClean",
+    "description": "Content Filter - Facebook!",
+    "version": "0.0.10",
+    "icons": {
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  /*  "externally_connectable": {
+        "matches": [
+            "http://localhost:3000/*"
+        ]
+    },*/
+    "permissions": [
+        "https://www.facebook.com/",
+        "http://www.facebook.com/",
+        "tabs",
+        "storage",
+        "notifications",
+        "contextMenus",
+        "cookies"
+    ],
+    "background": {
+        "scripts": [
+            "bootstrap.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.facebook.com/",
+                "https://www.facebook.com/*"
+            ],
+            "js": [
+                "js/filterfeed.js",
+                "js/jquery.js",
+                "js/popup.js",
+                "js/ga.js",
+                "js/js15_as.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "page_action": {
+        "default_title": "CloudClean",
+        "default_icon": "img/main_active.png",
+        "default_popup": "popup.html"
     }
-  ],
-
-  "page_action": {
-    "default_title": "CloudClean",
-    "default_icon": "inactive.png",
-    "default_popup": "popup.html"
-  }
-
 }

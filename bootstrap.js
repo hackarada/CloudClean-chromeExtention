@@ -14,7 +14,7 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
          // show the page action
         chrome.pageAction.show(tab.id);
 
-        // figure out which icon to show 
+        /*figure out which icon to show 
         chrome.storage.local.get('words', function(data) {
             // words exist
             if (data.words.length != 0) {
@@ -23,7 +23,7 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
             else {
                 chrome.pageAction.setIcon({tabId: tab.id, path: {'38': 'inactive.png'}});
             }
-        }); 
+        }); */
         // inject the content script onto the page
         console.log("injecting content script");
         chrome.tabs.executeScript(tab.id, {"file": "filterfeed.js"});

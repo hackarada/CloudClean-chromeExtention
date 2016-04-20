@@ -13,7 +13,6 @@ $(document).ready(function() {
         //var old_height = $("#content1").height();
         //var sum = current_height + old_height;
         $("#content1").css('height', 100);
-
         chrome.runtime.sendMessage({ type: "refresh" });
 
     });
@@ -189,12 +188,12 @@ $(document).ready(function() {
         }
         // adding the first keyword
         else {
-            html += "<ul id ='navlist'><div class='x' id ='delete'><span class='close'>&#10006;</span><li>" + word + "</li></div></ul>";
-            $("#keyword_list").append(html);
+			$("#notifications").append("<i class='fa fa-newspaper-o fa-3x'><span class='red'>"+html+"</span></i> <div class='clear2'> stories removed <br>from newsfeed </div><br>");
         }
 
         // clear the textbox
         $("#keywords").val('');
+       chrome.runtime.sendMessage({ type: "refresh" });
 
 
     }
@@ -216,42 +215,48 @@ $(document).ready(function() {
             }
         }
     });
+    
+    
 
-    function setDOMInfo() {
-        chrome.storage.local.get('num', function(data) {
-            var html = data['num'];
-            if (html == 1) {
+function setDOMInfo() {  
+	chrome.storage.local.get('num', function(data) {
+		var html = data['num']; 	
+		if (html == 1) {
                 $("#notificationsTop").css('display', 'block');
 
                 $("#notifications").append("<i class='update'><span>" + html + "</span> story removed from newsfeed </i>");
-            }
-            else if (html > 1) {
+		}
+		else if (html > 1) {
                 $("#notificationsTop").css('display', 'block');
 
                 $("#notifications").append("<i class='update'><span>" + html + "</span> stories removed from newsfeed </i>");
-            }
-        });
+		}
+	}); 
+	
+}
+window.addEventListener('DOMContentLoaded', setDOMInfo); 
+window.setInterval(function(){
+  setDOMInfo; 
+}, 1000);
 
-    }
-    window.addEventListener('DOMContentLoaded', setDOMInfo);
-    window.setInterval(function() {
-        setDOMInfo;
-    }, 1000);
-
-    // window.addEventListener('DOMContentLoaded', function() {
-    // 	chrome.tabs.query({
-    //         active: true,
-    //         currentWindow: true
-    //    	}, function(tabs) {
-    //         /* ...and send a request for the DOM info... */
-    //         chrome.tabs.sendMessage(
-    //                 tabs[0].id,
-    //                 {from: 'home', subject: 'DOMInfo'},
-    //                 /* ...also specifying a callback to be called 
-    //                  *    from the receiving end (content script) */
-    //                 setDOMInfo);
-    //    	});
-    // }); 
+// window.addEventListener('DOMContentLoaded', function() {
+// 	chrome.tabs.query({
+//         active: true,
+//         currentWindow: true
+//    	}, function(tabs) {
+//         /* ...and send a request for the DOM info... */
+//         chrome.tabs.sendMessage(
+//                 tabs[0].id,
+//                 {from: 'home', subject: 'DOMInfo'},
+//                 /* ...also specifying a callback to be called 
+//                  *    from the receiving end (content script) */
+//                 setDOMInfo);
+//    	});
+// }); 
 
 
 }); 
+
+    
+    
+   

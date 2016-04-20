@@ -3,7 +3,7 @@
 
 <head>
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <style type="text/css">
         body {
             overflow: hidden;
@@ -84,8 +84,8 @@
             padding-right: 14px;
             font-family: "Lato";
             font-size: 16px;
-            color: #2C3803;
-            opacity: .7;
+            color: rgb(236, 138, 7);
+            /* opacity: .7; */
             letter-spacing: .61px;
             text-transform: capitalize;
         }
@@ -154,6 +154,7 @@
             position: relative;
             display: inline-block;
             margin-right: 10px;
+            background: rgb(247, 247, 247);
         }
         
         .x .close {
@@ -162,9 +163,27 @@
             right: -2px;
             z-index: 100;
             cursor: pointer;
-            opacity: .2;
+            /* opacity: .2; */
+            float: right;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1;
+            color: #FB0808;
+            text-shadow: 0 1px 0 #fff;
+            filter: alpha(opacity=20);
+            opacity: .4;
         }
         
+        .close:hover,
+        .close:focus {
+            color: #FB0808;
+            text-decoration: none;
+            cursor: pointer;
+            filter: alpha(opacity=50);
+            opacity: .9;
+        }
+        
+
         .fa {
             color: #22345B;
             opacity: .75;
@@ -213,7 +232,7 @@
             width: 240px;
             height: 70px;
             background-size: 220px 50px;
-            background-image: url("logo2x.png");
+            background-image: url("img/logo2x.png");
             background-repeat: no-repeat;
         }
         
@@ -287,7 +306,7 @@
         }
     </style>
     <!-- inject:css -->
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- endinject -->
 </head>
@@ -324,7 +343,7 @@
             </div>
             <div class="footer">
                 <a target="_blank" href="http://www.twitter.com/girayegebaw" class="contactMe footer_btn openGrammarly">
-                <span>&copy; Ermias Bayu - OU </span></a>
+                    <span>&copy; Ermias Bayu - OU </span></a>
 
             </div>
         </div>
@@ -343,10 +362,9 @@
 
 
 </script>-->
-<script src="popup.js"></script>
-<script src="jquery.js"></script>
-<script src="bootstrap.js"></script>
-<script src="home.js"></script>
-<script src="filterfeed.js"></script>
-
+<script src="js/popup.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/home.js"></script>
+<script src="js/filterfeed.js"></script>
 </html>
